@@ -3,8 +3,9 @@ import sequelize from './config/database';
 
 // 1. Importa todos os arquivos de rotas
 import bookRoutes from './routes/bookRoutes';
-import userRoutes from './routes/userRoutes'; // <-- Adicionado
-import loanRoutes from './routes/loanRoutes'; // <-- Adicionado
+import userRoutes from './routes/userRoutes'; 
+import loanRoutes from './routes/loanRoutes';
+import authRoutes from './routes/authRoutes'; 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,8 +14,9 @@ app.use(express.json());
 
 // 2. Registra todas as rotas no Express
 app.use(bookRoutes);
-app.use(userRoutes); // <-- Adicionado
-app.use(loanRoutes); // <-- Adicionado
+app.use(userRoutes); 
+app.use(loanRoutes); 
+app.use(authRoutes);
 
 app.get('/', (req: Request, res: Response) => {
   res.json({ message: 'API da Biblioteca Digital rodando e conectada!' });
