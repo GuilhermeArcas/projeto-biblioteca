@@ -1,0 +1,44 @@
+### Rota Inicial
+GET http://localhost:3000/
+
+### Listar todos os livros
+GET http://localhost:3000/books
+
+### Cadastrar um novo livro
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "title": "Código Limpo",
+  "author": "Robert C. Martin",
+  "isbn": "9788576082675",
+  "totalQuantity": 3
+}
+
+### Criar um Usuário (O Sequelize vai encriptar a senha automaticamente)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Guilherme Arcas",
+  "email": "guilherme2@email.com",
+  "password_hash": "senha123",
+  "role": "cliente"
+}
+
+### Criar um Empréstimo (Vai ligar o Usuário 1 ao Livro 1)
+POST http://localhost:3000/loans
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "book_id": 1
+}
+
+### Devolver um Livro
+POST http://localhost:3000/loans/return
+Content-Type: application/json
+
+{
+  "loan_id": 1
+}
