@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import sequelize from './config/database';
+import cors from 'cors';
 
 // 1. Importa todos os arquivos de rotas
 import bookRoutes from './routes/bookRoutes';
@@ -10,6 +11,7 @@ import authRoutes from './routes/authRoutes';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(express.json());
 
 // 2. Registra todas as rotas no Express
