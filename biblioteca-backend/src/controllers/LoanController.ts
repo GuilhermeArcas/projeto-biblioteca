@@ -1,17 +1,23 @@
 import { Request, Response } from 'express';
+import { CustomRequest } from '../middlewares/authMiddleware';
 import Loan from '../models/Loan';
 import Book from '../models/Book';
 import User from '../models/User';
 import { error } from 'node:console';
 
 class LoanController {
-    public async create(req: Request, res: Response): Promise<Response> {
+    public async create(req: CustomRequest, res: Response): Promise<Response> {
         try {
-            const { user_id, book_id } = req.body;
+            const { book_id } = req.body;
+            const user_id = req.user?.id;
+
+            if (!user_id) {
+                return res.status(401).json({ error: 'Usuário não autenticado pelo token'})
+            }
 
             // validar se o usuário existe
-            const userExists = await User.findByPk(user_id);
-            if (!userExists) {
+           const userExists = await User.findByPk(user_id);
+                if (!userExists) {
                 return res.status(404).json({error: 'Usuário não encontrado'});
             }
 
