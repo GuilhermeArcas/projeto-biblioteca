@@ -49,6 +49,25 @@ class LoanController {
             }
         }
 
+        public async listMyLoans(req: CustomRequest, res: Response): Promise<Response> {
+            try {
+                const user_id = req.user?.id 
+
+                // busca todos os empréstimos onde o user_id seja igual ao do token
+                const loans = await Loan.findAll({
+                    where: { user_id },
+                    include: [{ model: Book, as: 'book' }]
+                });
+
+                return res.status(200).json(loans);
+            } catch (error: any) {
+                return res.status(500).json({
+                    error: 'Erro interno ao listar empréstimo',
+                    details: error.message
+                });
+            }
+        }
+
         public async returnBook(req: Request, res: Response): Promise<Response> {
             try{
                 const { loan_id } = req.body;
