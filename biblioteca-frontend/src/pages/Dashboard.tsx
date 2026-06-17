@@ -144,7 +144,7 @@ export function Dashboard() {
     <div className="flex border-b border-slate-700 mb-8 gap-4">
       <button
         onClick={() => setActiveTab('books')}
-        className={`pb-4 px-2 font-medium border-b-2 text-sm transition-colors ${
+        className={`pb-4 px-2 font-medium border-b-2 text-sm transition-colors hover: cursor-pointer ${
           activeTab === 'books'
             ? 'border-emerald-400 text-emerald-400'
             : 'border-transparent text-slate-400 hover:text-slate-200'
@@ -154,7 +154,7 @@ export function Dashboard() {
       </button>
       <button
         onClick={() => setActiveTab('loans')}
-        className={`pb-4 px-2 font-medium border-b-2 text-sm transition-colors ${
+        className={`pb-4 px-2 font-medium border-b-2 text-sm transition-colors hover: cursor-pointer ${
           activeTab === 'loans'
             ? 'border-emerald-400 text-emerald-400'
             : 'border-transparent text-slate-400 hover:text-slate-200'
@@ -195,7 +195,7 @@ export function Dashboard() {
                   <button 
                     onClick={() => handleSolicitarEmprestimo(livro.id)}
                     disabled={livro.totalQuantity === 0}
-                    className={`mt-4 w-full font-semibold py-2 px-4 rounded-lg transition-colors text-sm ${
+                    className={`mt-4 w-full font-semibold py-2 px-4 rounded-lg transition-colors text-sm hover: cursor-pointer ${
                       livro.totalQuantity === 0 
                         ? 'bg-slate-700 text-slate-500 cursor-not-allowed' 
                         : 'bg-emerald-500 hover:bg-emerald-400 text-slate-950'
