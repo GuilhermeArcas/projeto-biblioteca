@@ -1,1 +1,4 @@
+/* css-enforce-at-rules: false */
 @import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
