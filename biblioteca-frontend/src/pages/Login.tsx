@@ -59,7 +59,7 @@ export function Login() {
           />
         </div>
 
-        <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold p-3 rounded transition-colors">
+        <button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold p-3 rounded transition-colors hover: cursor-pointer">
           Entrar no Sistema
         </button>
       </form>

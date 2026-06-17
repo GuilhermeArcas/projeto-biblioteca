@@ -34,7 +34,7 @@ export default function App() {
         <span className="font-bold text-xl text-emerald-400">📚 DevLibrary</span>
         <button 
           onClick={handleLogout}
-          className="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-4 py-2 rounded-lg text-sm font-semibold transition-colors"
+          className="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-4 py-2 rounded-lg text-sm font-semibold transition-colors hover: cursor-pointer"
         >
           Sair do Sistema
         </button>
