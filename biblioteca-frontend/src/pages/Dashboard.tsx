@@ -164,7 +164,7 @@ export function Dashboard() {
                 <div className="flex border-b border-slate-200 dark:border-slate-700 mb-8 gap-4">
                     <button
                         onClick={() => setActiveTab('books')}
-                        className={`pb-4 px-2 font-medium border-b-2 text-sm transition-colors ${
+                        className={`pb-4 px-2 font-medium border-b-2 text-sm transition-colors hover: cursor-pointer ${
                             activeTab === 'books'
                             ? 'border-emerald-500 text-emerald-600 dark:border-emerald-400 dark:text-emerald-400'
                             : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
@@ -174,7 +174,7 @@ export function Dashboard() {
                     </button>
                     <button
                         onClick={() => setActiveTab('loans')}
-                        className={`pb-4 px-2 font-medium border-b-2 text-sm transition-colors ${
+                        className={`pb-4 px-2 font-medium border-b-2 text-sm transition-colors hover: cursor-pointer ${
                             activeTab === 'loans'
                             ? 'border-emerald-500 text-emerald-600 dark:border-emerald-400 dark:text-emerald-400'
                             : 'border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
